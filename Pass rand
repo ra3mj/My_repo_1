@@ -1,0 +1,26 @@
+function generatePassword(length) {
+    // Define character sets for different types of characters
+    const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
+    const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numberChars = '0123456789';
+    const symbolChars = '!@#$%^&*()-_+=<>?';
+
+    // Combine all character sets
+    const allChars = lowerCaseChars + upperCaseChars + numberChars + symbolChars;
+
+    let password = '';
+
+    // Loop to generate the password
+    for (let i = 0; i < length; i++) {
+        // Generate a random index to pick a character from the combined character set
+        const randomIndex = Math.floor(Math.random() * allChars.length);
+        // Append the randomly picked character to the password
+        password += allChars[randomIndex];
+    }
+
+    return password;
+}
+
+// Generate a random password of length 12
+const randomPassword = generatePassword(12);
+console.log('Random Password:', randomPassword);
