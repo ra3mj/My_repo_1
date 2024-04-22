@@ -1,0 +1,21 @@
+function generateFibonacciSequence(terms) {
+    let sequence = [];
+    
+    // Base cases
+    sequence[0] = 0;
+    sequence[1] = 1;
+    
+    // Generate Fibonacci sequence
+    for (let i = 2; i < terms; i++) {
+        sequence[i] = sequence[i - 1] + sequence[i - 2];
+    }
+    
+    return sequence;
+}
+
+function printSequence(sequence) {
+    console.log("Fibonacci Sequence:");
+    for (let i = 0; i < sequence.length; i++) {
+        console.log(sequence[i]);
+    }
+}
